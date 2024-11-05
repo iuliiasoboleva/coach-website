@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Блог</title>
+</head>
+
+<body>
+    <!-- Header с навигацией -->
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">Коучинг с [Ваше имя]</h1>
+            <nav class="nav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Главная</a></li>
+                    <li><a href="bot.html" class="nav__link">Бот</a></li>
+                    <li><a href="services.html" class="nav__link">Услуги</a></li>
+                    <li><a href="about.html" class="nav__link">Обо мне</a></li>
+                    <li><a href="blog.html" class="nav__link">Блог</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="blog">
+            <h2 class="blog__title">Последние посты</h2>
+            <div class="blog__container">
+                
+                <!-- Основной контент с постами -->
+                <section class="blog__posts">
+                    <article class="post">
+                        <img src="path/to/post-image1.jpg" alt="Изображение поста" class="post__image">
+                        <div class="post__content">
+                            <h3 class="post__title"><a href="post1.html">Заголовок поста</a></h3>
+                            <p class="post__date">10 января 2024</p>
+                            <p class="post__excerpt">Краткое описание статьи, подогревающее интерес к ее прочтению. Узнайте, как улучшить свою жизнь с помощью коучинга.</p>
+                            <a href="post1.html" class="post__read-more">Читать далее</a>
+                        </div>
+                    </article>
+                    
+                    <article class="post">
+                        <img src="path/to/post-image2.jpg" alt="Изображение поста" class="post__image">
+                        <div class="post__content">
+                            <h3 class="post__title"><a href="post2.html">Заголовок поста</a></h3>
+                            <p class="post__date">15 января 2024</p>
+                            <p class="post__excerpt">Советы о том, как построить успешную карьеру и сохранять баланс в жизни. Прочтите, чтобы узнать больше.</p>
+                            <a href="post2.html" class="post__read-more">Читать далее</a>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <img src="path/to/post-image3.jpg" alt="Изображение поста" class="post__image">
+                        <div class="post__content">
+                            <h3 class="post__title"><a href="post3.html">Заголовок поста</a></h3>
+                            <p class="post__date">20 января 2024</p>
+                            <p class="post__excerpt">Как повысить мотивацию и уверенность в себе. Эти советы помогут вам стать лучше.</p>
+                            <a href="post3.html" class="post__read-more">Читать далее</a>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Боковая панель -->
+                <aside class="sidebar">
+                    <section class="sidebar__categories">
+                        <h3 class="sidebar__title">Категории</h3>
+                        <ul class="sidebar__list">
+                            <li><a href="#" class="sidebar__link">Личностный рост</a></li>
+                            <li><a href="#" class="sidebar__link">Профессиональное развитие</a></li>
+                            <li><a href="#" class="sidebar__link">Здоровье и благополучие</a></li>
+                            <li><a href="#" class="sidebar__link">Мотивация</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="sidebar__popular-posts">
+                        <h3 class="sidebar__title">Популярные посты</h3>
+                        <ul class="sidebar__popular-list">
+                            <li>
+                                <a href="popular1.html" class="sidebar__popular-link">
+                                    <img src="path/to/popular1.jpg" alt="Изображение популярного поста" class="sidebar__popular-image">
+                                    <span class="sidebar__popular-title">Заголовок популярного поста</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="popular2.html" class="sidebar__popular-link">
+                                    <img src="path/to/popular2.jpg" alt="Изображение популярного поста" class="sidebar__popular-image">
+                                    <span class="sidebar__popular-title">Заголовок популярного поста</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="popular3.html" class="sidebar__popular-link">
+                                    <img src="path/to/popular3.jpg" alt="Изображение популярного поста" class="sidebar__popular-image">
+                                    <span class="sidebar__popular-title">Заголовок популярного поста</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__social">
+                <h4 class="footer__heading">Мы в соцсетях</h4>
+                <ul>
+                    <li><a href="#" class="footer__social-link">Facebook</a></li>
+                    <li><a href="#" class="footer__social-link">Instagram</a></li>
+                    <li><a href="#" class="footer__social-link">LinkedIn</a></li>
+                </ul>
+            </section>
+            <section class="footer__contact">
+                <h4 class="footer__heading">Контакты</h4>
+                <p>Телефон: +7 123 456-78-90</p>
+                <p>Email: coach@example.com</p>
+            </section>
+            <section class="footer__copy">
+                <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>
