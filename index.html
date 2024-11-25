@@ -8,57 +8,100 @@
     <title>Aconcagua</title>
 </head>
 
-<body class="main-body">
-    <!-- Header -->
-    <header class="header">
-        <div class="header__container">
-            <h1 class="header__title">Viaja con nosotros</h1>
-            <nav class="nav" aria-label="Main navigation">
-                <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link">Inicio</a></li>
-                    <li><a href="bot.html" class="nav__link">Exporar</a></li>
-                    <li><a href="services.html" class="nav__link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <!-- Welcome Section -->
-        <section class="welcome" aria-labelledby="welcome-title">
-            <div class="welcome__container">
-                <p class="welcome__text">Ubicado en el corazón de los Andes, el Aconcagua, el pico más alto de América
-                    del Sur, te espera con su impresionante belleza natural y vistas panorámicas incomparables. Ya seas
-                    un aventurero experimentado o alguien que busca conectarse con la naturaleza, esta maravilla te
-                    ofrece una experiencia única e inolvidable.</p>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Viaja con nosotros</h1>
+                <nav class="nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link">Inicio</a></li>
+                        <li><a href="bot.html" class="nav__link">Explorar</a></li>
+                        <li><a href="services.html" class="nav__link">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
+        </header>
+
+        <main class="main-content">
+            <section class="welcome">
+                <div class="welcome__container">
+                    <div class="welcome__border">
+                        <span class="welcome__dot"></span>
+                        <span class="welcome__dot"></span>
+                        <span class="welcome__dot"></span>
+                    </div>
+                    <div class="text-block">
+                        <h1 class="welcome__title">ACONCAGUA</h1>
+                        <p class="welcome__text">
+                            Ubicado en el corazón de los Andes, el Aconcagua, el pico más alto de América del Sur, te
+                            espera
+                            con su impresionante belleza natural y vistas panorámicas incomparables. Ya seas un
+                            aventurero
+                            experimentado o alguien que busca conectarse con la naturaleza, esta maravilla te ofrece una
+                            experiencia única e inolvidable.
+                        </p>
+                        <div class="slider">
+                            <input type="radio" name="slider" id="slide1" checked>
+                            <input type="radio" name="slider" id="slide2">
+                            <input type="radio" name="slider" id="slide3">
+
+                            <div class="slides">
+                                <div class="slide-group">
+                                    <div class="slide"><img src="./images/first.jpg" alt="Фото 1"></div>
+                                    <div class="slide"><img src="./images/second.jpg" alt="Фото 2"></div>
+                                    <div class="slide"><img src="./images/third.jpg" alt="Фото 3"></div>
+                                </div>
+                                <div class="slide-group">
+                                    <div class="slide"><img src="./images/fourth.jpg" alt="Фото 4"></div>
+                                    <div class="slide"><img src="./images/fifth.jpg" alt="Фото 5"></div>
+                                    <div class="slide"><img src="./images/sixth.jpg" alt="Фото 6"></div>
+                                </div>
+                                <div class="slide-group">
+                                    <div class="slide"><img src="./images/seventh.jpg" alt="Фото 7"></div>
+                                    <div class="slide"><img src="./images/eighth.jpg" alt="Фото 8"></div>
+                                    <div class="slide"><img src="./images/ninth.jpg" alt="Фото 9"></div>
+                                </div>
+                            </div>
+                            <div class="dots">
+                                <label for="slide1" class="dot"></label>
+                                <label for="slide2" class="dot"></label>
+                                <label for="slide3" class="dot"></label>
+                            </div>
+                        </div>
+                        <button class="button">Explorar</button>
+                        <div class="icons">
+                            <img src="./images/icons/f.png" alt="Facebook">
+                            <img src="./images/icons/w.png" alt="WhatsApp">
+                            <img src="./images/icons/i.png" alt="Instagram">
+                        </div>
+                    </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__container">
+                <section class="footer__social">
+                    <h4 class="footer__heading">Мы в соцсетях</h4>
+                    <ul>
+                        <li><a href="#" class="footer__social-link">Facebook</a></li>
+                        <li><a href="#" class="footer__social-link">Instagram</a></li>
+                        <li><a href="#" class="footer__social-link">LinkedIn</a></li>
+                    </ul>
+                </section>
+                <section class="footer__contact">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <p>Телефон: +7 123 456-78-90</p>
+                    <p>Email: coach@example.com</p>
+                </section>
+                <section class="footer__copy">
+                    <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+                </section>
             </div>
-        </section>
-
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <section class="footer__social">
-                <h4 class="footer__heading">Мы в соцсетях</h4>
-                <ul>
-                    <li><a href="#" class="footer__social-link">Facebook</a></li>
-                    <li><a href="#" class="footer__social-link">Instagram</a></li>
-                    <li><a href="#" class="footer__social-link">LinkedIn</a></li>
-                </ul>
-            </section>
-            <section class="footer__contact">
-                <h4 class="footer__heading">Контакты</h4>
-                <p>Телефон: +7 123 456-78-90</p>
-                <p>Email: coach@example.com</p>
-            </section>
-            <section class="footer__copy">
-                <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
-            </section>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>
