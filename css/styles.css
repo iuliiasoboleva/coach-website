@@ -35,7 +35,13 @@ a {
     font-weight: bold;
 }
 
-.header__title {
+.nav__link_white,
+.header__title_white {
+    color: white;
+}
+
+.header__title,
+.header__title_white {
     font-size: 32px;
 }
 
@@ -43,13 +49,18 @@ a {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    flex: 1;
     background-image: url('../images/aconcagua.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
+.services-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 /* Welcome Section */
 .welcome {
@@ -103,75 +114,6 @@ a {
     border-radius: 50%;
 }
 
-/* Slider */
-.slider {
-    position: relative;
-    width: 900px;
-    height: 300px;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide-group {
-    display: flex;
-    width: 100%;
-}
-
-.slide {
-    flex: 1 1 33.33%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.slide img {
-    max-width: 100%;
-    height: auto;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: gray;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-input#slide1:checked ~ .slides {
-    transform: translateX(0);
-}
-
-input#slide2:checked ~ .slides {
-    transform: translateX(-100%);
-}
-
-input#slide3:checked ~ .slides {
-    transform: translateX(-200%);
-}
-
-input#slide1:checked ~ .dots .dot:nth-child(1),
-input#slide2:checked ~ .dots .dot:nth-child(2),
-input#slide3:checked ~ .dots .dot:nth-child(3) {
-    background-color: black;
-}
-
 .button {
     padding: 20px;
     font-size: 24px;
@@ -179,7 +121,7 @@ input#slide3:checked ~ .dots .dot:nth-child(3) {
     border: 2px solid white;
     border-radius: 8px;
     background-color: transparent;
-    max-width: 200px;
+    max-width: 300px;
     cursor: pointer;
 }
 
@@ -192,6 +134,198 @@ input#slide3:checked ~ .dots .dot:nth-child(3) {
 .icons img {
     width: 80px;
     height: 80px;
+    cursor: pointer;
+}
+
+/* Services */
+.services-title {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+}
+
+.map-image {
+    position: relative;
+}
+
+.location-image {
+    position: absolute;
+    left: 115px;
+    top: 445px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #808080;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    color: white;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+}
+
+.contact-form input:placeholder-shown + label,
+.contact-form textarea:placeholder-shown + label {
+    top: 20px;
+    left: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.number-slider {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.number-container {
+    display: flex;
+    overflow: hidden;
+    width: 210px;
+}
+
+.number-item {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+
+.number-item.hidden {
+    display: none;
+}
+
+.slider-arrow {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.travel-date {
+    color: white;
+}
+
+/* Slider */
+.slider-container {
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+.text-info {
+    color: white;
+    max-width: 300px;
+    font-style: 14px;
+}
+
+.slider-images {
+    display: flex;
+}
+
+.slider-image {
+    max-width: 200px;
+}
+
+.slider-text-block {
+    display: flex;
+    gap: 20px;
+}
+
+.slider-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-text-block {
+    max-width: 300px;
+    background-color: rgb(11, 167, 224);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    height: 500px;
+}
+
+.slider-main-image {
+    position: relative;
 }
 
 /* Footer */

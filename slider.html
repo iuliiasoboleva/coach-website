@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Aconcagua</title>
+</head>
+
+<body>
+    <div class="services-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title_white">Viaja con nosotros</h1>
+                <nav class="nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link_white">Inicio</a></li>
+                        <li><a href="slider.html" class="nav__link_white">Explorar</a></li>
+                        <li><a href="services.html" class="nav__link_white">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="services-title">CAMPO BASE</h1>
+            <div class="slider-container">
+                <div class="slider-main-image">
+                    <img src="./images/1.png" alt="Mountain" id="main-image">
+                    <div class="main-text-block">
+                        <div class="subtitle-block">
+                            <h2 class="subtitle">
+                                Confluencia (3390m)
+                            </h2>
+                        </div>
+                        <div class="slider-icons">
+                            <img src="./images/icons/people.png" alt="People">
+                            <img src="./images/icons/event.png" alt="Event">
+                            <img src="./images/icons/luggage.png" alt="Luggage">
+                        </div>
+                        <p class="under-text">
+                            La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques de
+                            Horcones. La primer jornada tiene como meta alcanzar el campamento de Confluencia. Una vez
+                            realizado los trámites de ingreso en el puesto de Guardaparque donde se debe presentar el
+                            permiso (trekking o ascensión) y el guardaparque a cargo hará entrega de la bolsa numerada
+                            para residuos, se comienza a caminar por la Quebrada de Horcones pasando en primera
+                            instancia por la Laguna de Horcones.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="slider-text-block">
+                        <span class="welcome__border"></span>
+                        <div class="slider-text">
+                            <p class="text-info" id="main-text">
+                                Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al
+                                próximo
+                                punto distintivo, el puente que cruza el Río Horcones (puente construido durante el
+                                rodaje
+                                de la
+                                película “7 Años en el Tíbet”). Se cruza el puente hasta arribar a una zona bastante
+                                verde
+                                justo
+                                en la desembocadura de la quebrada de “El Durazno”. Desde este punto la senda sigue bien
+                                visible
+                                y siempre a la margen del río. La pendiente es suave pero sostenida. Se arriba así al
+                                Campamento
+                                de Confluencia.
+                            </p>
+                            <button class="button" id="next-step">Pasa al siguiente paso</button>
+                            <div class="slider-images">
+                                <img src="./images/eighth.jpg" alt="Mountain" class="slider-image">
+                                <img src="./images/fifth.jpg" alt="Mountain" class="slider-image">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dots" id="dots-container">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__container">
+                <section class="footer__social">
+                    <h4 class="footer__heading">Мы в соцсетях</h4>
+                    <ul>
+                        <li><a href="#" class="footer__social-link">Facebook</a></li>
+                        <li><a href="#" class="footer__social-link">Instagram</a></li>
+                        <li><a href="#" class="footer__social-link">LinkedIn</a></li>
+                    </ul>
+                </section>
+                <section class="footer__contact">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <p>Телефон: +7 123 456-78-90</p>
+                    <p>Email: coach@example.com</p>
+                </section>
+                <section class="footer__copy">
+                    <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+                </section>
+            </div>
+        </footer>
+        <script>
+            // Данные для слайдов
+            const slides = [
+                {
+                    image: "./images/1.png",
+                    text: "La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques..."
+                },
+                {
+                    image: "./images/2.png",
+                    text: "Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al próximo punto..."
+                },
+                {
+                    image: "./images/3.png",
+                    text: "Se cruza el puente hasta arribar a una zona bastante verde justo en la desembocadura de la quebrada..."
+                },
+                {
+                    image: "./images/4.png",
+                    text: "Desde este punto la senda sigue bien visible y siempre a la margen del río. La pendiente es suave..."
+                },
+                {
+                    image: "./images/5.png",
+                    text: "Se arriba así al Campamento de Confluencia, donde podrás descansar antes de continuar la travesía..."
+                }
+            ];
+
+            let currentIndex = 0;
+
+            const mainImage = document.getElementById("main-image");
+            const mainText = document.getElementById("main-text");
+            const dots = document.querySelectorAll(".dot");
+            const nextStepButton = document.getElementById("next-step");
+
+            function updateSlide(index) {
+                currentIndex = index;
+                mainImage.src = slides[index].image;
+                mainText.textContent = slides[index].text;
+
+                dots.forEach(dot => dot.classList.remove("active"));
+                dots[index].classList.add("active");
+
+                nextStepButton.textContent =
+                    index === slides.length - 1 ? "Перейти на предыдущий шаг" : "Pasa al siguiente paso";
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener("click", () => {
+                    const index = parseInt(dot.dataset.index);
+                    updateSlide(index);
+                });
+            });
+
+            nextStepButton.addEventListener("click", () => {
+                if (currentIndex === slides.length - 1) {
+                    updateSlide(0);
+                } else {
+                    updateSlide(currentIndex + 1);
+                }
+            });
+
+            updateSlide(0);
+        </script>
+</body>
+
+</html>

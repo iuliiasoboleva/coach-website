@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,131 +9,100 @@
 </head>
 
 <body>
-     <!-- Header -->
-     <header class="header">
-        <div class="header__container">
-            <h1 class="header__title">Viaja con nosotros</h1>
-            <nav class="nav" aria-label="Main navigation">
-                <ul class="nav__list">
-                    <li><a href="index.html" class="nav__link">Inicio</a></li>
-                    <li><a href="bot.html" class="nav__link">Exporar</a></li>
-                    <li><a href="services.html" class="nav__link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        <!-- Секция услуг -->
-        <section class="services">
-            <h2 class="services__title">Наши услуги</h2>
-            <p class="services__description">Ознакомьтесь с нашими предложениями и стоимостью консультаций.</p>
-            <div class="services__list">
-                <article class="service">
-                    <h3 class="service__title">Индивидуальная коуч-сессия</h3>
-                    <p class="service__price">Стоимость: 5000 руб.</p>
-                    <p class="service__description">Персональная сессия, направленная на развитие личных и профессиональных навыков.</p>
-                </article>
-                <article class="service">
-                    <h3 class="service__title">Групповая коуч-сессия</h3>
-                    <p class="service__price">Стоимость: 3000 руб.</p>
-                    <p class="service__description">Групповая сессия для команд или небольших групп с целью развития коммуникативных навыков.</p>
-                </article>
-                <article class="service">
-                    <h3 class="service__title">Коучинг по карьерному росту</h3>
-                    <p class="service__price">Стоимость: 7000 руб.</p>
-                    <p class="service__description">Консультация по вопросам карьерного роста и повышения квалификации.</p>
-                </article>
+    <div class="services-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title_white">Viaja con nosotros</h1>
+                <nav class="nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link_white">Inicio</a></li>
+                        <li><a href="slider.html" class="nav__link_white">Explorar</a></li>
+                        <li><a href="services.html" class="nav__link_white">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <!-- Календарь записи -->
-        <section class="calendar">
-            <h2 class="calendar__title">Запишитесь на консультацию</h2>
-            <p class="calendar__description">Выберите удобную дату для записи на консультацию.</p>
-            <table class="calendar__table">
-                <thead>
-                    <tr>
-                        <th>Пн</th>
-                        <th>Вт</th>
-                        <th>Ср</th>
-                        <th>Чт</th>
-                        <th>Пт</th>
-                        <th>Сб</th>
-                        <th>Вс</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="calendar__day calendar__day--empty"></td>
-                        <td class="calendar__day calendar__day--empty"></td>
-                        <td class="calendar__day">1</td>
-                        <td class="calendar__day">2</td>
-                        <td class="calendar__day">3</td>
-                        <td class="calendar__day">4</td>
-                        <td class="calendar__day">5</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar__day">6</td>
-                        <td class="calendar__day">7</td>
-                        <td class="calendar__day">8</td>
-                        <td class="calendar__day">9</td>
-                        <td class="calendar__day">10</td>
-                        <td class="calendar__day">11</td>
-                        <td class="calendar__day">12</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar__day">13</td>
-                        <td class="calendar__day">14</td>
-                        <td class="calendar__day">15</td>
-                        <td class="calendar__day">16</td>
-                        <td class="calendar__day">17</td>
-                        <td class="calendar__day">18</td>
-                        <td class="calendar__day">19</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar__day">20</td>
-                        <td class="calendar__day">21</td>
-                        <td class="calendar__day">22</td>
-                        <td class="calendar__day">23</td>
-                        <td class="calendar__day">24</td>
-                        <td class="calendar__day">25</td>
-                        <td class="calendar__day">26</td>
-                    </tr>
-                    <tr>
-                        <td class="calendar__day">27</td>
-                        <td class="calendar__day">28</td>
-                        <td class="calendar__day">29</td>
-                        <td class="calendar__day">30</td>
-                        <td class="calendar__day">31</td>
-                        <td class="calendar__day calendar__day--empty"></td>
-                        <td class="calendar__day calendar__day--empty"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+        <main>
+            <h1 class="services-title">Contacta con nosotros</h1>
+            <div class="main-content">
+                <div class="image-container">
+                    <img src="./images/map.png" alt="Mapa" class="map-image">
+                    <img src="./images/icons/location.png" alt="Ubicacion" class="location-image">
+                </div>
+                <form action="thank-you.html" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name">Ingresa tu nombre</label>
+                    </div>
+                
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Ingresa tu email</label>
+                    </div>
+                    <p for="travel-date" class="travel-date">Ingresa tu fecha de viaje</p>
 
-    <footer class="footer">
-        <div class="footer__container">
-            <section class="footer__social">
-                <h4 class="footer__heading">Мы в соцсетях</h4>
-                <ul>
-                    <li><a href="#" class="footer__social-link">Facebook</a></li>
-                    <li><a href="#" class="footer__social-link">Instagram</a></li>
-                    <li><a href="#" class="footer__social-link">LinkedIn</a></li>
-                </ul>
-            </section>
-            <section class="footer__contact">
-                <h4 class="footer__heading">Контакты</h4>
-                <p>Телефон: +7 123 456-78-90</p>
-                <p>Email: coach@example.com</p>
-            </section>
-            <section class="footer__copy">
-                <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
-            </section>
-        </div>
-    </footer>
+                    <div class="form-group">
+                        <input type="date" id="travel-date" name="travel-date" required>
+                    </div>                    
+                    
+                    <label for="people">Cantidad de personas</label>
+                    <div class="number-slider">
+                        <button type="button" class="slider-arrow" id="prev">&lt;</button>
+                        <div class="number-container">
+                            <div class="number-item visible">1</div>
+                            <div class="number-item visible">2</div>
+                            <div class="number-item visible">3</div>
+                            <div class="number-item visible">4</div>
+                            <div class="number-item visible">5</div>
+                            <div class="number-item visible">6</div>
+                            <div class="number-item visible">7</div>
+                            <div class="number-item hidden">8</div>
+                            <div class="number-item hidden">9</div>
+                            <div class="number-item hidden">10</div>
+                        </div>
+                        <button type="button" class="slider-arrow" id="next">&gt;</button>
+                    </div>
+                    <input type="hidden" id="selected-number" name="selected-number" value="1">
+                
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder=" " required></textarea>
+                        <label for="message">Ingresa tu mensaje</label>
+                    </div>
+                
+                    <button type="submit" class="button">Enviar</button>
+                </form>                                
+            </div>
+            <div class="icons">
+                <img src="./images/icons/facebook.png" alt="Facebook">
+                <img src="./images/icons/whatsapp.png" alt="WhatsApp">
+                <img src="./images/icons/instagram.png" alt="Instagram">
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <section class="footer__social">
+                    <h4 class="footer__heading">Мы в соцсетях</h4>
+                    <ul>
+                        <li><a href="#" class="footer__social-link">Facebook</a></li>
+                        <li><a href="#" class="footer__social-link">Instagram</a></li>
+                        <li><a href="#" class="footer__social-link">LinkedIn</a></li>
+                    </ul>
+                </section>
+                <section class="footer__contact">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <p>Телефон: +7 123 456-78-90</p>
+                    <p>Email: coach@example.com</p>
+                </section>
+                <section class="footer__copy">
+                    <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+                </section>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
