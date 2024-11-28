@@ -208,6 +208,7 @@ a {
 
 .main-content {
     display: flex;
+    justify-content: center;
     gap: 40px;
 }
 
@@ -331,7 +332,7 @@ a {
     gap: 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
 }
 
 .text-info {
@@ -374,6 +375,7 @@ a {
     background-color: rgb(11, 167, 224);
     border-radius: 8px 8px 0 0;
     padding: 20px;
+    text-align: center;
 }
 
 .bottom-part {
@@ -449,6 +451,10 @@ a {
     border-radius: 8px;
 }
 
+.blog-under-text {
+    color: white;
+}
+
 .read-more-button {
     display: block;
     margin-top: 10px;
@@ -502,4 +508,8 @@ a {
 
 .footer__social ul {
     list-style: none;
+}
+
+.my-info img{
+    max-width: 200px;
 }

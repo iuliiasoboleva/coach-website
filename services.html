@@ -35,20 +35,19 @@
                 <form action="thank-you.html" method="POST" class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder=" " required>
-                        <label for="name">Ingresa tu nombre</label>
+                        <label for="name">Ingresa tu <em>nombre</em></label>
                     </div>
 
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder=" " required>
-                        <label for="email">Ingresa tu email</label>
+                        <label for="email">Ingresa tu <em>email</em></label>
                     </div>
-                    <p for="travel-date" class="travel-date">Ingresa tu fecha de viaje</p>
-
+                    <label for="travel-date" class="travel-date">Ingresa tu fecha de <strong>viaje</strong></label>
                     <div class="form-group">
                         <input type="date" id="travel-date" name="travel-date" required>
                     </div>
 
-                    <label for="people">Cantidad de personas</label>
+                    <label id="people"><strong>Cantidad de personas</strong></label>
                     <div class="number-slider">
                         <button type="button" class="slider-arrow" id="prev">&lt;</button>
                         <div class="number-container">
@@ -84,6 +83,7 @@
 
         <footer class="footer">
             <div class="footer__container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13436.94179455569!2d-70.02116723388677!3d-32.65317807944735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9687925500c38047%3A0x5234c15eaaa14869!2sAconcagua!5e0!3m2!1sen!2sar!4v1732812602387!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <section class="footer__social">
                     <h4 class="footer__heading">Síguenos en redes sociales</h4>
                     <ul>
@@ -95,12 +95,19 @@
                 <section class="footer__contact">
                     <h4 class="footer__heading">Contacto</h4>
                     <p>Teléfono: +34 123 456 789</p>
-                    <p>Email: info@viajes.com</p>
+                    <p>Email: <abbr title="Correo Electrónico">Email</abbr>: info@viajes.com</p>
                     <p>Dirección: Calle de los Aventureros, 10, Mendoza</p>
                 </section>
-                <section class="footer__copy">
-                    <p>&copy; 2024 Viajes con Nosotros. Todos los derechos reservados.</p>
-                </section>
+                <div class="my-info">
+                    <img src="./images/my-photo.jpg" alt="My photo">
+                    <p>Iuliia Soboleva</p>
+                    <p>Maquetado y Desarrollo Web</p>
+                    <p>Carlos Ferrer</p>
+                    <p>Para un TP de primer cuatrimestre de la Escuela Da Vinci, 2024</p>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2024 Viajes con Nosotros. Todos los derechos reservados.</p>
             </div>
         </footer>
     </div>
@@ -111,7 +118,6 @@
             const numberItems = document.querySelectorAll('.number-item');
             const selectedNumberInput = document.getElementById('selected-number');
             const form = document.querySelector('.contact-form');
-            const submitButton = document.querySelector('.button[type="submit"]');
 
             let currentIndex = 0;
 
@@ -158,7 +164,6 @@
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-
                 const formData = {
                     name: form.name.value,
                     email: form.email.value,
@@ -166,15 +171,12 @@
                     selectedNumber: selectedNumberInput.value,
                     message: form.message.value,
                 };
-
-                console.log("Данные формы:", formData);
-
+                console.log(formData);
                 window.location.href = "thank-you.html";
             });
 
             updateSliderVisibility();
         });
-
     </script>
 </body>
 
