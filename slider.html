@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,8 @@
                 <nav class="nav" aria-label="Main navigation">
                     <ul class="nav__list">
                         <li><a href="index.html" class="nav__link_white">Inicio</a></li>
-                        <li><a href="slider.html" class="nav__link_white">Explorar</a></li>
+                        <li><a href="slider.html" class="nav__link_white active">Explorar</a></li>
+                        <li><a href="blog.html" class="nav__link_white">Blog</a></li>
                         <li><a href="services.html" class="nav__link_white">Contacto</a></li>
                     </ul>
                 </nav>
@@ -25,29 +26,33 @@
         </header>
 
         <main>
-            <h1 class="services-title">CAMPO BASE</h1>
+            <h1 class="services-title" id="main-title">CAMPO BASE</h1>
             <div class="slider-container">
                 <div class="slider-main-image">
                     <img src="./images/1.png" alt="Mountain" id="main-image">
                     <div class="main-text-block">
                         <div class="subtitle-block">
-                            <h2 class="subtitle">
-                                Confluencia (3390m)
-                            </h2>
+                            <h2 class="subtitle" id="subtitle">Confluencia (3390m)</h2>
                         </div>
-                        <div class="slider-icons">
-                            <img src="./images/icons/people.png" alt="People">
-                            <img src="./images/icons/event.png" alt="Event">
-                            <img src="./images/icons/luggage.png" alt="Luggage">
+                        <div class="bottom-part">
+                            <div class="slider-icons">
+                                <img src="./images/icons/people.png" alt="People">
+                                <img src="./images/icons/event.png" alt="Event">
+                                <img src="./images/icons/luggage.png" alt="Luggage">
+                            </div>
+                            <p class="under-text" id="under-text">
+                                La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques
+                                de
+                                Horcones. La primer jornada tiene como meta alcanzar el campamento de Confluencia. Una
+                                vez
+                                realizado los trámites de ingreso en el puesto de Guardaparque donde se debe presentar
+                                el
+                                permiso (trekking o ascensión) y el guardaparque a cargo hará entrega de la bolsa
+                                numerada
+                                para residuos, se comienza a caminar por la Quebrada de Horcones pasando en primera
+                                instancia por la Laguna de Horcones.
+                            </p>
                         </div>
-                        <p class="under-text">
-                            La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques de
-                            Horcones. La primer jornada tiene como meta alcanzar el campamento de Confluencia. Una vez
-                            realizado los trámites de ingreso en el puesto de Guardaparque donde se debe presentar el
-                            permiso (trekking o ascensión) y el guardaparque a cargo hará entrega de la bolsa numerada
-                            para residuos, se comienza a caminar por la Quebrada de Horcones pasando en primera
-                            instancia por la Laguna de Horcones.
-                        </p>
                     </div>
                 </div>
                 <div>
@@ -56,18 +61,15 @@
                         <div class="slider-text">
                             <p class="text-info" id="main-text">
                                 Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al
-                                próximo
-                                punto distintivo, el puente que cruza el Río Horcones (puente construido durante el
-                                rodaje
-                                de la
-                                película “7 Años en el Tíbet”). Se cruza el puente hasta arribar a una zona bastante
-                                verde
-                                justo
-                                en la desembocadura de la quebrada de “El Durazno”. Desde este punto la senda sigue bien
-                                visible
-                                y siempre a la margen del río. La pendiente es suave pero sostenida. Se arriba así al
-                                Campamento
-                                de Confluencia.
+                                próximo punto distintivo, el puente que cruza el Río Horcones (puente construido durante
+                                el
+                                rodaje de la película “7 Años en el Tíbet”). Se cruza el puente hasta arribar a una zona
+                                bastante
+                                verde justo en la desembocadura de la quebrada de “El Durazno”. Desde este punto la
+                                senda sigue bien
+                                visible y siempre a la margen del río. La pendiente es suave pero sostenida. Se arriba
+                                así al
+                                Campamento de Confluencia.
                             </p>
                             <button class="button" id="next-step">Pasa al siguiente paso</button>
                             <div class="slider-images">
@@ -92,7 +94,7 @@
         <footer class="footer">
             <div class="footer__container">
                 <section class="footer__social">
-                    <h4 class="footer__heading">Мы в соцсетях</h4>
+                    <h4 class="footer__heading">Síguenos en redes sociales</h4>
                     <ul>
                         <li><a href="#" class="footer__social-link">Facebook</a></li>
                         <li><a href="#" class="footer__social-link">Instagram</a></li>
@@ -100,72 +102,126 @@
                     </ul>
                 </section>
                 <section class="footer__contact">
-                    <h4 class="footer__heading">Контакты</h4>
-                    <p>Телефон: +7 123 456-78-90</p>
-                    <p>Email: coach@example.com</p>
+                    <h4 class="footer__heading">Contacto</h4>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Email: info@viajes.com</p>
+                    <p>Dirección: Calle de los Aventureros, 10, Mendoza</p>
                 </section>
                 <section class="footer__copy">
-                    <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+                    <p>&copy; 2024 Viajes con Nosotros. Todos los derechos reservados.</p>
                 </section>
             </div>
         </footer>
         <script>
-            // Данные для слайдов
             const slides = [
                 {
                     image: "./images/1.png",
-                    text: "La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques..."
+                    mainTitle: "CAMPO BASE",
+                    subtitle: 'Confluencia (3390m)',
+                    underText: ` La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques de
+                    Horcones. La primer jornada tiene como meta alcanzar el campamento de Confluencia. Una vez
+                    realizado los trámites de ingreso en el puesto de Guardaparque donde se debe presentar el
+                    permiso (trekking o ascensión) y el guardaparque a cargo hará entrega de la bolsa numerada
+                    para residuos, se comienza a caminar por la Quebrada de Horcones pasando en primera
+                    instancia por la Laguna de Horcones.`,
+                    text: `Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al próximo 
+                    punto distintivo, el puente que cruza el Río Horcones (puente construido durante el 
+                    rodaje de la película “7 Años en el Tíbet”). Se cruza el puente hasta arribar a una zona bastante
+                    verde justo en la desembocadura de la quebrada de “El Durazno”. Desde este punto la senda sigue bien
+                    visible y siempre a la margen del río. La pendiente es suave pero sostenida. Se arriba así al
+                    Campamento de Confluencia.`
                 },
                 {
                     image: "./images/2.png",
-                    text: "Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al próximo punto..."
+                    mainTitle: "PLAZA DE MULAS",
+                    subtitle: 'Campo Base Plaza de Mulas (4300m)',
+                    underText: `Playa Ancha, peculiar formación compuesta de material aluvional donde abundan los cantos rodados, 
+                    termina en otro de los puntos distintivos de esta jornada: “Ibañez”, justo en la base de los torreones que conforman 
+                    el inicio de la gran cara oeste del Cerro Aconcagua. Aquí el terreno cambia nuevamente, tornándose más accidentado 
+                    y de mayor pendiente, atravesando sucesivos depósitos de acarreos provenientes de la cara oeste que se alternan 
+                    con viejos depósitos morenáicos, siempre a la derecha del Río Horcones superior.`,
+                    text: `Este es un tramo bastante largo y de un desnivel muy importante. Por esta razón es muy recomendable, 
+                    como parte del plan de aclimatación, un trekking al mirador de la Pared Sur (Plaza Francia, 4000m) con el 
+                    fin de conseguir una aclimatación gradual y arribar a Plaza de Mulas en mejor condición. Desde Confluencia 
+                    se sigue la senda que conduce al puente que cruza el Río Horcones inferior. Es una zona de terreno accidentado 
+                    y se encuentran carteles indicadores para alcanzar dicho puente. Una vez que se cruza el cauce, la senda continúa 
+                    al margen izquierdo del Río Horcones inferior y asciende en busca de una zona de antiguas morenas para desembocar 
+                    finalmente en “Playa Ancha”, una planicie de 10km de longitud entre los 3600 y 3800m.`
                 },
                 {
                     image: "./images/3.png",
-                    text: "Se cruza el puente hasta arribar a una zona bastante verde justo en la desembocadura de la quebrada..."
+                    mainTitle: "PLAZA CANADA",
+                    subtitle: 'Campo 1 Plaza Canadá (5050m)',
+                    underText: `El ascenso continúa hasta alcanzar una diagonal ascendente hacia la izquierda para luego salir en zigzag 
+                    a la izquierda del pináculo rocoso que forma el portezuelo de Plaza Canadá (5050m).`,
+                    text: `Una senda muy marcada nace de Plaza de Mulas describiendo varios zigzag que conducen mediante una 
+                    pendiente algo empinada a un paso estrecho entre bandas rocosas conocido como “El Semáforo” (4550m). Desde aquí el sendero continúa 
+                    sobre sendas muy bien marcadas para alcanzar un roquerío aislado en medio de un monótono acarreo conocido como “Las piedras Conway” (4750m), 
+                    bautizadas así en memoria de Sir Conway. (Guillermo Martin Conway , hombre de ciencias, profesor de bellas artes y gran alpinista inglés, 
+                    quien en 1898 alcanzara en su intento el “Filo del Guanaco”, que une las dos cumbres del Aconcagua).`
                 },
                 {
                     image: "./images/4.png",
-                    text: "Desde este punto la senda sigue bien visible y siempre a la margen del río. La pendiente es suave..."
+                    mainTitle: "CAMPO 3",
+                    subtitle: 'Campo 3 Berlín (5930m)',
+                    underText: `Se arriba así a otro punto distintivo de la vía, “El Balcón Amarillo” (5800m), estética formación rocosa, que invita 
+                    a un merecido descanso antes del último esfuerzo. Aquí la senda continúa hacia el este y luego de un par de curvas se encuentra 
+                    uno de frente a la directa diagonal que conduce a un escalón rocoso de tonalidades amarillas. Esta es la senda que llega a 
+                    “Plaza Cólera” (5970m), otra alternativa equidistante de Berlín desde este punto. Asi se arriba al Campo 3 Berlín (5930m).`,
+                    text: `Este tramo es bastante más corto que el anterior, pero habrá que tener en cuenta los efectos de la altitud, que a esta altura 
+                    provocan gran agitación. El paso se vuelve decididamente más lento. La senda continúa en travesía ascendente hacia el este, 
+                    hasta ganar una serie de zigzag que unen los distintos premontorios rocosos. La vista se vuelve cada vez más espectacular a 
+                    medida que dejamos por debajo la mayoría de las cumbres cercanas.`
                 },
                 {
                     image: "./images/5.png",
-                    text: "Se arriba así al Campamento de Confluencia, donde podrás descansar antes de continuar la travesía..."
+                    mainTitle: "CUMBRE",
+                    subtitle: 'CUMBRE (6962m)',
+                    underText: `Esta travesía que si bien parece que nos depositará en la cumbre en poco tiempo, suele demandar 45 minutos o una 
+                    hora de dura marcha. Es aquí donde se pone a prueba todo nuestro trabajo físico, de aclimatación y mental para enfrentarnos 
+                    con este esfuerzo. Finalmente en los últimos metros de la travesía del “Filo del Guanaco” se asciende por un pasillo muy rocoso 
+                    que contornea la cumbre hacia el norte, para montarse finalmente en los últimos escalones de roca que rematan la CUMBRE.`,
+                    text: `El día de cumbre comienza muy temprano. La senda es bastante obvia y la misma asciende entre formaciones rocosas 
+                    hasta alcanzar una zona de rocas de formas caprichosas y muy claras, conocidas como “Piedras Blancas” (6060m). Aquí la senda 
+                    se monta sobre el filo Norte, hasta alcanzar un pequeño paso hasta el cual se accede a la ladera noreste de la montaña. Desde 
+                    aquí el ascenso continúa hasta acceder a uno de los puntos clave del día de cumbre “Refugio Independencia” (6380m). Este será 
+                    un buen momento del ascenso para corroborar la condición general y las reservas de energía para afrontar los tramos finales. 
+                    La decisión de continuar debe ser bien meditada en este punto.`
                 }
             ];
 
             let currentIndex = 0;
 
             const mainImage = document.getElementById("main-image");
+            const mainTitle = document.getElementById("main-title");
+            const subtitle = document.getElementById("subtitle");
+            const underText = document.getElementById("under-text");
             const mainText = document.getElementById("main-text");
             const dots = document.querySelectorAll(".dot");
             const nextStepButton = document.getElementById("next-step");
 
             function updateSlide(index) {
                 currentIndex = index;
+
                 mainImage.src = slides[index].image;
+                mainTitle.textContent = slides[index].mainTitle;
+                subtitle.textContent = slides[index].subtitle;
+                underText.textContent = slides[index].underText;
                 mainText.textContent = slides[index].text;
 
-                dots.forEach(dot => dot.classList.remove("active"));
+                dots.forEach((dot) => dot.classList.remove("active"));
                 dots[index].classList.add("active");
-
-                nextStepButton.textContent =
-                    index === slides.length - 1 ? "Перейти на предыдущий шаг" : "Pasa al siguiente paso";
             }
 
-            dots.forEach(dot => {
+            dots.forEach((dot) => {
                 dot.addEventListener("click", () => {
-                    const index = parseInt(dot.dataset.index);
+                    const index = parseInt(dot.dataset.index, 10);
                     updateSlide(index);
                 });
             });
 
             nextStepButton.addEventListener("click", () => {
-                if (currentIndex === slides.length - 1) {
-                    updateSlide(0);
-                } else {
-                    updateSlide(currentIndex + 1);
-                }
+                window.location.href = "blog.html";
             });
 
             updateSlide(0);

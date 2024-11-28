@@ -1,4 +1,3 @@
-/* Основные настройки */
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +39,12 @@ a {
     color: white;
 }
 
+.nav__link.active,
+.nav__link_white.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .header__title,
 .header__title_white {
     font-size: 32px;
@@ -53,6 +58,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    justify-content: space-between;
 }
 
 .services-container {
@@ -136,6 +142,60 @@ a {
     height: 80px;
     cursor: pointer;
 }
+.main-slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+}
+
+.main-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    max-width: 700px;
+}
+
+.main-slide-group {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.main-slide {
+    flex: 0 0 200px;
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+.main-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
 
 /* Services */
 .services-title {
@@ -167,14 +227,16 @@ a {
     gap: 20px;
     justify-content: center;
     margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
 }
 
 .contact-form label {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 16px;
-    color: white;
+    font-size: 24px;
+    color: black;
     transition: 0.3s ease-in-out;
     pointer-events: none;
 }
@@ -193,20 +255,17 @@ a {
     border: 1px solid #ccc;
     border-radius: 8px;
     outline: none;
-    color: white;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #007bff;
+    border: none;
+    font-weight: bold;
 }
 
 .contact-form input:placeholder-shown + label,
 .contact-form textarea:placeholder-shown + label {
-    top: 20px;
+    top: 5px;
     left: 10px;
-    font-size: 14px;
-    color: #fff;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
 }
 
 .contact-form input:not(:placeholder-shown) + label,
@@ -214,7 +273,6 @@ a {
     top: -10px;
     left: 10px;
     font-size: 12px;
-    color: #007bff;
 }
 
 .number-slider {
@@ -226,7 +284,7 @@ a {
 .number-container {
     display: flex;
     overflow: hidden;
-    width: 210px;
+    width: 275px;
 }
 
 .number-item {
@@ -236,9 +294,17 @@ a {
     justify-content: center;
     align-items: center;
     margin: 0 5px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
+    background-color: #808080;
+    padding: 10px;
+}
+
+.number-item.selected {
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }
 
 .number-item.hidden {
@@ -246,7 +312,7 @@ a {
 }
 
 .slider-arrow {
-    background-color: #007bff;
+    background-color: transparent;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -255,6 +321,8 @@ a {
 
 .travel-date {
     color: white;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 /* Slider */
@@ -264,26 +332,6 @@ a {
     display: flex;
     align-items: center;
     margin-bottom: 200px;
-}
-
-.dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.dot {
-    width: 15px;
-    height: 15px;
-    background-color: gray;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #007bff;
 }
 
 .text-info {
@@ -313,10 +361,8 @@ a {
 
 .main-text-block {
     max-width: 300px;
-    background-color: rgb(11, 167, 224);
     color: white;
     border-radius: 8px;
-    padding: 20px;
     font-size: 14px;
     position: absolute;
     top: 50%;
@@ -324,13 +370,103 @@ a {
     height: 500px;
 }
 
+.subtitle-block {
+    background-color: rgb(11, 167, 224);
+    border-radius: 8px 8px 0 0;
+    padding: 20px;
+}
+
+.bottom-part {
+    background-color: rgba(11, 167, 224, .5);
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.slider-icons {
+    position: absolute;
+    top: -22px;
+    display: flex;
+    gap: 10px;
+}
+
+.slider-icons img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
 .slider-main-image {
     position: relative;
 }
 
+.success-container {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.success-message {
+    color: white;
+    margin-bottom: 40px;
+}
+
+.success-text-block {
+    margin: 0 auto;
+}
+
+/* Blog */
+.hidden {
+    display: none;
+}
+
+.blog-page {
+    background-color: black;
+}
+
+.blog-container {
+    display: grid;
+    gap: 20px;
+    margin: 20px;
+}
+
+.blog-article {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    gap: 20px;
+}
+
+.blog-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.read-more-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3;
+}
+
 /* Footer */
 .footer {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -356,10 +492,14 @@ a {
 }
 
 .footer__social-link:hover {
-    color: #007bff;
+    color: gray;
 }
 
 .footer__contact p, .footer__copy p {
     font-size: 14px;
     margin: 5px 0;
+}
+
+.footer__social ul {
+    list-style: none;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Услуги</title>
+    <title>Aconcagua</title>
 </head>
 
 <body>
@@ -18,7 +18,8 @@
                     <ul class="nav__list">
                         <li><a href="index.html" class="nav__link_white">Inicio</a></li>
                         <li><a href="slider.html" class="nav__link_white">Explorar</a></li>
-                        <li><a href="services.html" class="nav__link_white">Contacto</a></li>
+                        <li><a href="blog.html" class="nav__link_white">Blog</a></li>
+                        <li><a href="services.html" class="nav__link_white active">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -36,7 +37,7 @@
                         <input type="text" id="name" name="name" placeholder=" " required>
                         <label for="name">Ingresa tu nombre</label>
                     </div>
-                
+
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder=" " required>
                         <label for="email">Ingresa tu email</label>
@@ -45,8 +46,8 @@
 
                     <div class="form-group">
                         <input type="date" id="travel-date" name="travel-date" required>
-                    </div>                    
-                    
+                    </div>
+
                     <label for="people">Cantidad de personas</label>
                     <div class="number-slider">
                         <button type="button" class="slider-arrow" id="prev">&lt;</button>
@@ -65,14 +66,14 @@
                         <button type="button" class="slider-arrow" id="next">&gt;</button>
                     </div>
                     <input type="hidden" id="selected-number" name="selected-number" value="1">
-                
+
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder=" " required></textarea>
                         <label for="message">Ingresa tu mensaje</label>
                     </div>
-                
+
                     <button type="submit" class="button">Enviar</button>
-                </form>                                
+                </form>
             </div>
             <div class="icons">
                 <img src="./images/icons/facebook.png" alt="Facebook">
@@ -84,7 +85,7 @@
         <footer class="footer">
             <div class="footer__container">
                 <section class="footer__social">
-                    <h4 class="footer__heading">Мы в соцсетях</h4>
+                    <h4 class="footer__heading">Síguenos en redes sociales</h4>
                     <ul>
                         <li><a href="#" class="footer__social-link">Facebook</a></li>
                         <li><a href="#" class="footer__social-link">Instagram</a></li>
@@ -92,17 +93,89 @@
                     </ul>
                 </section>
                 <section class="footer__contact">
-                    <h4 class="footer__heading">Контакты</h4>
-                    <p>Телефон: +7 123 456-78-90</p>
-                    <p>Email: coach@example.com</p>
+                    <h4 class="footer__heading">Contacto</h4>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Email: info@viajes.com</p>
+                    <p>Dirección: Calle de los Aventureros, 10, Mendoza</p>
                 </section>
                 <section class="footer__copy">
-                    <p>&copy; 2024 [Ваше имя]. Все права защищены.</p>
+                    <p>&copy; 2024 Viajes con Nosotros. Todos los derechos reservados.</p>
                 </section>
             </div>
         </footer>
     </div>
-    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const numberItems = document.querySelectorAll('.number-item');
+            const selectedNumberInput = document.getElementById('selected-number');
+            const form = document.querySelector('.contact-form');
+            const submitButton = document.querySelector('.button[type="submit"]');
+
+            let currentIndex = 0;
+
+            function updateSliderVisibility() {
+                numberItems.forEach((item, index) => {
+                    if (index >= currentIndex && index < currentIndex + 7) {
+                        item.classList.remove('hidden');
+                        item.classList.add('visible');
+                    } else {
+                        item.classList.remove('visible');
+                        item.classList.add('hidden');
+                    }
+                });
+
+                prevButton.style.display = currentIndex === 0 ? 'none' : 'inline-block';
+                nextButton.style.display = currentIndex === numberItems.length - 7 ? 'none' : 'inline-block';
+            }
+
+            function selectNumber(index) {
+                selectedNumberInput.value = index + 1;
+                numberItems.forEach((item) => item.classList.remove('selected'));
+                numberItems[index].classList.add('selected');
+            }
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSliderVisibility();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < numberItems.length - 7) {
+                    currentIndex++;
+                    updateSliderVisibility();
+                }
+            });
+
+            numberItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    selectNumber(index);
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = {
+                    name: form.name.value,
+                    email: form.email.value,
+                    travelDate: form['travel-date'].value,
+                    selectedNumber: selectedNumberInput.value,
+                    message: form.message.value,
+                };
+
+                console.log("Данные формы:", formData);
+
+                window.location.href = "thank-you.html";
+            });
+
+            updateSliderVisibility();
+        });
+
+    </script>
 </body>
 
 </html>
