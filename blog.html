@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Blog Aconcagua</title>
+</head>
+
+<body>
+    <div class="blog-page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Viaja con nosotros</h1>
+                <button class="burger-menu" aria-label="Toggle navigation">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                <nav class="nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link_white">Inicio</a></li>
+                        <li><a href="slider.html" class="nav__link_white">Explorar</a></li>
+                        <li><a href="blog.html" class="nav__link_white active">Blog</a></li>
+                        <li><a href="services.html" class="nav__link_white">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="main">
+            <h1 class="services-title">Descubre las maravillas del <strong>Aconcagua</strong></h1>
+            <section class="blog-container" aria-labelledby="blog-title">
+                <h2 id="blog-title" class="visually-hidden blog-under-text">Artículos de <em>blog</em></h2>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13436.94179455569!2d-70.02116723388677!3d-32.65317807944735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9687925500c38047%3A0x5234c15eaaa14869!2sAconcagua!5e0!3m2!1sen!2sar!4v1732812602387!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <section class="footer__social">
+                    <h4 class="footer__heading">Síguenos en redes sociales</h4>
+                    <ul>
+                        <li><a href="#" class="footer__social-link">Facebook</a></li>
+                        <li><a href="#" class="footer__social-link">Instagram</a></li>
+                        <li><a href="#" class="footer__social-link">LinkedIn</a></li>
+                    </ul>
+                </section>
+                <section class="footer__contact">
+                    <h4 class="footer__heading">Contacto</h4>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Email: <abbr title="Correo Electrónico">Email</abbr>: info@viajes.com</p>
+                    <p>Dirección: Calle de los Aventureros, 10, Mendoza</p>
+                </section>
+                <div class="my-info">
+                    <img src="./images/my-photo.jpg" alt="My photo">
+                    <p>Iuliia Soboleva</p>
+                    <p>Maquetado y Desarrollo Web</p>
+                    <p>Carlos Ferrer</p>
+                    <p>Para un TP de primer cuatrimestre de la Escuela Da Vinci, 2024</p>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <p>&copy; 2024 Viajes con Nosotros. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const articles = [
+            {
+                image: "./images/ninth.jpg",
+                mainTitle: "CAMPO BASE",
+                subtitle: "Confluencia (3390m)",
+                underText: `La aproximación al Campamento Base Plaza de Mulas comienza en el puesto de Guardaparques.`,
+                text: `Siempre siguiendo una senda muy bien marcada, la caminata continúa hasta arribar al próximo punto distintivo, el puente que cruza el Río Horcones.`
+            },
+            {
+                image: "./images/eighth.jpg",
+                mainTitle: "PLAZA DE MULAS",
+                subtitle: "Campo Base Plaza de Mulas (4300m)",
+                underText: `Playa Ancha, peculiar formación compuesta de material aluvional donde abundan los cantos rodados.`,
+                text: `Desde Confluencia se sigue la senda que conduce al puente que cruza el Río Horcones inferior.`
+            },
+            {
+                image: "./images/fourth.jpg",
+                mainTitle: "PLAZA CANADA",
+                subtitle: "Campo 1 Plaza Canadá (5050m)",
+                underText: `El ascenso continúa hasta alcanzar una diagonal ascendente hacia la izquierda para luego salir en zigzag.`,
+                text: `Desde aquí el sendero continúa sobre sendas muy bien marcadas para alcanzar un roquerío aislado.`
+            }
+        ];
+
+        const blogContainer = document.querySelector(".blog-container");
+
+        articles.forEach((article, index) => {
+            const articleElement = document.createElement("article");
+            articleElement.className = "blog-article";
+
+            articleElement.innerHTML = `
+        <img src="${article.image}" alt="Imagen del artículo: ${article.mainTitle}" class="blog-image">
+        <div>
+            <h2 class="blog-title">${article.mainTitle}</h2>
+            <h3 class="blog-subtitle">${article.subtitle}</h3>
+            <p class="blog-text-short">${article.underText}</p>
+            <p class="blog-text-full" hidden>${article.text}</p>
+            <button class="read-more-button" data-index="${index}" aria-expanded="false">Leer más</button>
+        </div>
+    `;
+
+            blogContainer.appendChild(articleElement);
+        });
+
+        blogContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("read-more-button")) {
+                const button = e.target;
+                const article = button.closest(".blog-article");
+                const fullText = article.querySelector(".blog-text-full");
+
+                if (fullText.hasAttribute("hidden")) {
+                    fullText.removeAttribute("hidden");
+                    button.textContent = "Leer menos";
+                    button.setAttribute("aria-expanded", "true");
+                } else {
+                    fullText.setAttribute("hidden", true);
+                    button.textContent = "Leer más";
+                    button.setAttribute("aria-expanded", "false");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
